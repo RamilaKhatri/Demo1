@@ -43,8 +43,18 @@ document.querySelectorAll(".project-card").forEach(card => {
 
 /* Step 4: Canvas Drawing */
 let c = document.getElementById("myCanvas").getContext("2d");
+
+// Draw a rectangle
 c.fillStyle = "blue";
-c.fillRect(20, 20, 100, 50);
+c.fillRect(20, 20, 300, 150);
+
+// Add text
+c.font = "40px Arial";
+c.fillStyle = "black";      
+c.textAlign = "center";
+c.textBaseline = "middle";   
+c.fillText("Hello, Canvas!", 20 + 300 /2, 20 +150 /2); 
+
 
 /* Step 5: Image Slider */
 let slides = document.querySelectorAll(".slide");
@@ -77,3 +87,12 @@ window.addEventListener("scroll", () => {
 topBtn.onclick = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
 };
+/* Video Cover Hide */
+let cover = document.getElementById("videoCover");
+let video = document.getElementById("myVideo");
+
+cover.onclick = () => {
+    cover.classList.add("hidden");
+    video.play();
+};
+
