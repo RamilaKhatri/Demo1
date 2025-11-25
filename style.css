@@ -98,9 +98,10 @@ section > * {
 
 #myCanvas {
     display: block;
-    margin: 20px auto;
+    margin: 10px auto;
     border: 2px solid #ccc;
-    border-radius: 5px;
+    border-radius: 3px;
+    position: center;
 }
 
 /* Slider */
@@ -280,8 +281,6 @@ audio, video, canvas {
 }
 
 
-
-
 /* Video cover overlay */
 .video-wrapper {
     position: relative;
@@ -290,7 +289,7 @@ audio, video, canvas {
 
 .video-cover {
     width: 100%;
-    height: 720px;
+    height: 240px;
     object-fit: cover;
     position: absolute;
     top: 0;
@@ -302,6 +301,19 @@ audio, video, canvas {
 
 .video-cover.hidden {
     display: none;
+}
+p i {
+    margin-right: 8px; /* space between icon and text */
+    color: #00bcd4; /* icon color */
+}
+
+p a {
+    text-decoration: none;
+    color: #222;
+}
+
+p a:hover {
+    color: #00bcd4;
 }
 
 
