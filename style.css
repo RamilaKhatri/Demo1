@@ -151,11 +151,11 @@ section > * {
 /* Contact Section */
 .contact-card {
     background: white;
-    padding: 30px;
-    max-width: 500px;
+    padding: 5px;
+    max-width: 400px;
     border-radius: 12px;
     box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-    margin-top: 20px;
+    margin-top: 5px;
 }
 
 /* Floating label input design */
@@ -200,6 +200,11 @@ section > * {
     background: white;
     padding: 0 4px;
     color: #00bcd4;
+}
+.form-message {
+    color: red;
+    margin-top: 10px;
+    font-size: 14px;
 }
 
 /* Submit Button */

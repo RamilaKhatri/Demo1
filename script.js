@@ -27,12 +27,25 @@ document.getElementById("contactForm").addEventListener("submit", e => {
         return;
     }
 
-    localStorage.setItem("formName", name);
-    localStorage.setItem("formEmail", email);
-    localStorage.setItem("formMessage", message);
+    // Clear error message
+    document.getElementById("form-msg").innerHTML = "";
 
-    window.location.href = "form-details.html";
+    // Display message on screen
+    let display = document.getElementById("submittedMessages");
+    display.innerHTML = `
+        <h3>Submitted Message</h3>
+        <p><strong>Name:</strong> ${name}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Message:</strong> ${message}</p>
+        <hr>
+    `;
+
+    // Optional: clear form fields
+    document.getElementById("contactForm").reset();
+
+    alert("Message sent successfully!");
 });
+
 
 /*Step 3: Project Card Navigation */
 document.querySelectorAll(".project-card").forEach(card => {
@@ -56,21 +69,39 @@ c.textBaseline = "middle";
 c.fillText("Hello, Canvas!", 20 + 300 /2, 20 +150 /2); 
 
 
-/* Step 5: Image Slider */
-let slides = document.querySelectorAll(".slide");
+//Image slides
 let index = 0;
+const slides = document.querySelectorAll(".slide");
+const totalSlides = slides.length;
 
-document.getElementById("next").onclick = () => {
-    slides[index].classList.remove("active");
-    index = (index + 1) % slides.length;
-    slides[index].classList.add("active");
-};
+// Show slides
+function showSlide(num) {
+    slides.forEach((slide, i) => {
+        slide.classList.remove("active");
+        if (i === num) slide.classList.add("active");
+    });
+}
 
-document.getElementById("prev").onclick = () => {
-    slides[index].classList.remove("active");
-    index = (index - 1 + slides.length) % slides.length;
-    slides[index].classList.add("active");
-};
+// Next slide (auto + button)
+function nextSlide() {
+    index = (index + 1) % totalSlides;
+    showSlide(index);
+}
+
+// Prev slide (button)
+function prevSlide() {
+    index = (index - 1 + totalSlides) % totalSlides;
+    showSlide(index);
+}
+
+// Auto-slide every 3 seconds
+setInterval(nextSlide, 3000);
+
+// Buttons
+document.getElementById("next").onclick = nextSlide;
+document.getElementById("prev").onclick = prevSlide;
+
+
 
 /*  Step 6: Dark/Light Mode  */
 document.getElementById("theme-toggle").onclick = () => {
