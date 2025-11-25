@@ -7,25 +7,36 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+    
+    <button id="theme-toggle">🌙</button>
+
     <header>
         <h1>Ramila</h1>
         <nav>
             <a href="#home">Home</a>
             <a href="#about">About</a>
+            <a href="#skills">Skills</a>
             <a href="#projects">Projects</a>
+            <a href="#media">Media</a>
             <a href="#contact">Contact</a>
         </nav>
     </header>
 
+    
+    <button id="backToTop">↑</button>
+
+
     <section id="home">
         <div class="text">
-            <img src="ramila.jpg" alt="Ramila Photo" style="width:200px;height:200px;border-radius:50%;object-fit:cover;margin-bottom:20px;">
+            <img src="ramila.jpg" alt="Ramila Photo" class="profile-photo">
             <h2>Hello, I'm Ramila</h2>
             <p>BSc (Hons) Computer Science Student | Developer | Tech Enthusiast</p>
             <button onclick="scrollToSection('projects')">View My Work</button>
         </div>
     </section>
 
+    <!-- ABOUT -->
     <section id="about">
         <h2>About Me</h2>
         <p>
@@ -35,29 +46,86 @@
         </p>
     </section>
 
-    <section id="projects">
-        <h2>Projects</h2>
 
-        <div class="project-card">
-            <h3>Hotel Operations Management System</h3>
-            <p>A real-time system to track materials, room errors, and departmental gaps.</p>
+    <section id="skills">
+        <h2>My Skills</h2>
+
+        <div class="skill">
+            <p>HTML</p>
+            <div class="bar"><div class="fill" data-width="90%"></div></div>
         </div>
 
-        <div class="project-card">
-            <h3>Weather App (Cache-then-Network)</h3>
-            <p>JavaScript app using localStorage for offline-friendly data handling.</p>
+        <div class="skill">
+            <p>CSS</p>
+            <div class="bar"><div class="fill" data-width="80%"></div></div>
         </div>
 
-        <div class="project-card">
-            <h3>3D Hazard Identification Game</h3>
-            <p>An educational simulation teaching users how to identify road hazards.</p>
+        <div class="skill">
+            <p>JavaScript</p>
+            <div class="bar"><div class="fill" data-width="75%"></div></div>
         </div>
     </section>
 
+    
+    <section id="projects">
+        <h2>Projects</h2>
+
+        <div class="project-card" data-link="https://your-link-here.com">
+            <h3>Hotel Operations Management System</h3>
+            <p>A real-time system to track materials and room errors.</p>
+        </div>
+
+        <div class="project-card" data-link="https://your-link2.com">
+            <h3>Weather App (Cache-then-Network)</h3>
+            <p>Offline-friendly weather application using localStorage.</p>
+        </div>
+
+        <div class="project-card" data-link="https://your-link3.com">
+            <h3>3D Hazard Identification Game</h3>
+            <p>A simulation game for road hazard detection.</p>
+        </div>
+    </section>
+
+    <!-- MEDIA (Video, Audio, Canvas) -->
+    <section id="media">
+        <h2>Media Section</h2>
+
+        <video controls width="400">
+            <source src="video.mp4" type="video/mp4">
+        </video>
+
+        <audio controls>
+            <source src="audio.mp3" type="audio/mpeg">
+        </audio>
+
+        <canvas id="myCanvas" width="300" height="200"></canvas>
+    </section>
+
+    <!-- IMAGE SLIDER -->
+    <section id="slider">
+        <h2>Image Slider</h2>
+
+        <div class="slider-container">
+            <img class="slide active" src="img1.jpg">
+            <img class="slide" src="img2.jpg">
+            <img class="slide" src="img3.jpg">
+        </div>
+
+        <button id="prev">Prev</button>
+        <button id="next">Next</button>
+    </section>
+
+    
     <section id="contact">
         <h2>Contact Me</h2>
-        <p>Email: <strong>np02cs4s250015@bicnepal.edu.np</strong></p>
-        <p>Phone: <strong>+977-9847161432</strong></p>
+        <form id="contactForm">
+            <input type="text" id="name" placeholder="Your Name">
+            <input type="email" id="email" placeholder="Your Email">
+            <textarea id="message" placeholder="Message"></textarea>
+            <button type="submit">Submit</button>
+        </form>
+
+        <p id="form-msg"></p>
     </section>
 
     <footer>
